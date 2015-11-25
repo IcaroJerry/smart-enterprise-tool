@@ -10,7 +10,8 @@ gem 'rails', '4.2.4'
    group :production do
 	  gem 'pg'
    end
-
+# Twitter bootstrap
+gem 'twitter-bootstrap-rails'
 # Gem used to allow the upload of images
 gem 'carrierwave'
 # Use SCSS for stylesheets
