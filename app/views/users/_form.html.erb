@@ -1,37 +1,51 @@
-<%= form_for(@user, :html => { :multipart => true }) do |f| %>
+<%= form_for @user, :html => { :class => "form-horizontal user" } do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :username, :class => 'form-control' %>
+    </div>
+    <%= error_span(@user[:username]) %>
   </div>
-  <div class="field">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %>
+
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@user[:name]) %>
   </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
+
+  <div class="control-group">
+    <%= f.label :responsibility, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :responsibility, :class => 'form-control' %>
+    </div>
+    <%= error_span(@user[:responsibility]) %>
   </div>
-  <div class="field">
-    <%= f.label :responsibility %><br>
-    <%= f.number_field :responsibility %>
+
+  <div class="control-group">
+    <%= f.label :picture, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :picture, :class => 'btn btn-default' %>
+    </div>
+    <%= error_span(@user[:picture]) %>
   </div>
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),users_path, :class => 'btn btn-default' %>
 <% end %>
