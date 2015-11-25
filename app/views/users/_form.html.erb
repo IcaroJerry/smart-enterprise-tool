@@ -29,6 +29,14 @@
     </div>
     <%= error_span(@user[:name]) %>
   </div>
+  
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'form-control' %>
+    </div>
+    <%= error_span(@user[:email]) %>
+  </div>
 
   <div class="control-group">
     <%= f.label :responsibility, :class => 'control-label' %>
