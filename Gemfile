@@ -57,3 +57,5 @@ group :development do
   gem 'spring'
 end
 
+# Easy to use interface for administration
+gem "rails_admin"
