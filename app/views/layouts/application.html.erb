@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-    <%= nav_bar :fixed => :top, :brand => image_tag('md-logo-name.png') + 'Smart Enterprise Tool', :responsive => true do %>
+    <%= nav_bar :fixed => :top, :brand => image_tag('logo-name.png') + 'Smart Enterprise Tool', :responsive => true do %>
 
     <%= menu_group :pull => :right do %>
         <% if user_signed_in? %>
@@ -16,8 +16,8 @@
           <%= menu_item "Sign out", destroy_user_session_path, :method => :delete %>
         <% else %>
           <%= menu_item "Home", welcome_index_url %>
-          <%= menu_item "Sign in", new_user_registration_path %>
-          <%= menu_item "Login", new_user_session_path %> 
+          <%= menu_item "Sign up", new_user_registration_path %>
+          <%= menu_item "Sign in", new_user_session_path %> 
           <%= menu_item "About", welcome_about_url %>
         <% end %>
     <% end %>
