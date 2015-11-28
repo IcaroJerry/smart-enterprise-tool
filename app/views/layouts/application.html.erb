@@ -8,23 +8,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= nav_bar :static => :top, :brand => 'Smart Enterprise Tool', :responsive => true do %>
-    <%= menu_group do %>
-      <%= menu_item "Users", users_path %>
-      <%= menu_item "About SET", welcome_about_url %>
-    <% end %>
-  <% end %>
+    <%= nav_bar :fixed => :top, :brand => image_tag('md-logo-name.png') + 'Smart Enterprise Tool', :responsive => true do %>
 
-  <div class="navbar navbar-fixed-top">
-     <div class="navbar-inner">
-     <div class="container">
-	     <a class="brand" href="/">SET app</a>
-	     <ul class="nav">
-	       <li class="active"><a href="/ideas">Ideas</a></li>
-	     </ul>
-     </div>
-     </div>
-   </div>
+    <%= menu_group :pull => :right do %>
+        <% if user_signed_in? %>
+          <%= menu_text "Signed in as #{current_user.name}" %>
+          <%= menu_item "Sign out", destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <%= menu_item "Home", welcome_index_url %>
+          <%= menu_item "Sign in", new_user_registration_path %>
+          <%= menu_item "Login", new_user_session_path %> 
+          <%= menu_item "About", welcome_about_url %>
+        <% end %>
+    <% end %>
+
+  <% end %>
 
    <div class="container">
      <p class="notice"><%= notice %></p>
