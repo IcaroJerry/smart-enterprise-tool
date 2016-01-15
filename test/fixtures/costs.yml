@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  value: 1.5
+  installments: 1
+  date: 2016-01-14
+  description: MyText
+  isfixed: false
+  isespecial: false
+  user_id: 
+
+two:
+  value: 1.5
+  installments: 1
+  date: 2016-01-14
+  description: MyText
+  isfixed: false
+  isespecial: false
+  user_id: 

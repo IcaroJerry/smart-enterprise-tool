@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @cost.value %>
+</p>
+
+<p>
+  <strong>Installments:</strong>
+  <%= @cost.installments %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cost.date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cost.description %>
+</p>
+
+<p>
+  <strong>Isfixed:</strong>
+  <%= @cost.isfixed %>
+</p>
+
+<p>
+  <strong>Isespecial:</strong>
+  <%= @cost.isespecial %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @cost.user %>
+</p>
+
+<%= link_to 'Edit', edit_cost_path(@cost) %> |
+<%= link_to 'Back', costs_path %>
