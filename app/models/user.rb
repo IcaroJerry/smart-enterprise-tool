@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
     mount_uploader :picture, PictureUploader
 
-    validates :username, :name, :email, presence: true
-    validates :name, length: { maximum: 60 }
+    validates :username, :first_name, :last_name, :email, presence: true
+    validates :first_name, length: { maximum: 30 }
+    validates :last_name, length: { maximum: 50}
     validates :email, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
     validates :username, uniqueness: { case_sensitive: false }, format: { with: /\A[-a-z0-9]+\Z/i, on: :create }
 

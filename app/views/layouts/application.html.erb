@@ -13,7 +13,7 @@
 
     <%= menu_group :pull => :right do %>
         <% if user_signed_in? %>
-          <%= menu_text "Signed in as #{current_user.name}" %>
+          <%= menu_text "Signed in as #{current_user.first_name}" %>
           <%= menu_item "Sign out", destroy_user_session_path, :method => :delete %>
         <% else %>
           <%= menu_item "Home", welcome_index_url %>
