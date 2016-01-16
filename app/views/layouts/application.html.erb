@@ -31,11 +31,20 @@
      <%= yield %>
    </div>
 </body>
-<footer>
-  <div class="container">
-	  Smart Enterprise Tool
-  </div>
-</footer>
+
+<footer class="footer">
+    <div class="container">
+      <div class='clique pull-left'>
+        <p>
+        <a href='/welcome/about'>About SET</a>
+        </p>
+       </div>
+      <div class='clique pull-right'>
+        <p>Powered by:</p>
+        <%= link_to image_tag('https://avatars0.githubusercontent.com/u/9601443?v=3&s=400') ,'http://github.com/icarojerry/' %>
+      </div>
+    </div>
+ </footer>
 
 
 </html>
