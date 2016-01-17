@@ -12,8 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
-
 html {
   position: relative;
   min-height: 100%;

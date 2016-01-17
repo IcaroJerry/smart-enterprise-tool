@@ -12,6 +12,8 @@ gem 'rails', '4.2.4'
    end
 # Twitter bootstrap
 gem 'twitter-bootstrap-rails'
+gem 'font-awesome-sass'
+gem 'font-awesome-rails'
 # Gem used to allow the upload of images
 gem 'carrierwave'
 # Use SCSS for stylesheets
