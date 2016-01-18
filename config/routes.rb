@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/lock_screen'
+
   resources :orders
   resources :costs
   resources :costs
